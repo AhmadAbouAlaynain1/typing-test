@@ -16,7 +16,7 @@ function App() {
   const [wordsUsed, setWordsUsed] = useState(0);
   const [time, setTime] = useState(0);
 
-  //Check if button is pressed to start timer
+  //Check if button is pressed
   const toggleStarted = () => {
     setTimingElapsed(0);
     setTyped("");
@@ -26,7 +26,7 @@ function App() {
     });
   };
 
-  //Save values when stopping the timer
+  //Save values when stopping the timer and calculate results
   const stopTimer = (stop) => {
     if (stop === true) {
       setText((state) => state.replaceAll("===", ""));
@@ -64,7 +64,7 @@ function App() {
     }, 1000);
   }, []);
 
-  //Check correct words whenever user types
+  //Check current word whenever user types to add annotation around it
   useEffect(() => {
     let typedList = typed.split(" ");
     let textList = text.split(" ");
