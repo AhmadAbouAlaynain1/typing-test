@@ -86,6 +86,7 @@ function App() {
     <div className="container">
       <header className="header">
         <h2>Typing Test | Timer: {started ? timer - timingElapsed : ""}</h2>
+        <h4>=== word === is used to identify current word</h4>
         <Timing
           started={started}
           toggleStarted={toggleStarted}
@@ -93,7 +94,6 @@ function App() {
         />
       </header>
       <div className="typing-test-area">
-        <h4>We use === word === to identify current word</h4>
         <p className="p-5 m-5">{text}</p>
         <TypingInput setTyped={setTyped} typed={typed} started={started} />
         {!started && (
